@@ -67,6 +67,46 @@ list backup of datafile 4;
 list copy of datafile 8;
 ```
 
+#### Check all files that need backup
+```sql
+report need backup;
+```
+
+#### Backup spcific tablespaces
+```sql
+backup tablespace mine, users filesperset=2;
+```
+
+#### Backup specific datafile;
+```sql
+backup datafile 4;
+```
+
+#### Backup as ordinary copy
+```sql
+backup as copy datafile 8;
+```
+
+#### Delete extra/obsolete backups
+```sql
+delete obsolete;
+```
+
+#### Delete specific backupset
+```sql
+delete backupset 1;
+```
+
+#### Delete multiple without prompting
+```sql
+delete noprompt backupset 5, 6, 7;
+```
+
+#### Delete datafilecopy
+```sql
+delete datafilecopy 1;
+```
+
 
 #### Types of backup we can perform in ARCHIVELOG mode:
 1. Whole Database/Tablespace/Datafile/Archived Log
