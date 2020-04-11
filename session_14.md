@@ -17,12 +17,12 @@ show all;			                            // #default points to unchanged paramete
 
 #### Change redundancy policy of how many backups to keep
 ```sql
-configure retention policy to redundancy 2;     //3rd or more backups will be obsolete
+configure retention policy to redundancy 2;     #3rd or more backups will be obsolete
 ```
 
 #### Make backup followed by backup of Controlfile and SPFILE
 ```sql
-configure controlfile autobackup on;            //constrol files wills will also be backed up with usual backup
+configure controlfile autobackup on;            #constrol files wills will also be backed up with usual backup
 ```
 
 #### Setting location and name of our backup sets
