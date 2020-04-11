@@ -12,17 +12,17 @@ report schema;
 
 #### List all RMAN parameters
 ```sql
-show all;			// #default points to unchanged parameters
+show all;			                            // #default points to unchanged parameters
 ```
 
-#### Change redundancy policy
+#### Change redundancy policy of how many backups to keep
 ```sql
-configure retention policy to redundancy 2;
+configure retention policy to redundancy 2;     //3rd or more backups will be obsolete
 ```
 
 #### Make backup followed by backup of Controlfile and SPFILE
 ```sql
-configure controlfile autobackup on;
+configure controlfile autobackup on;            //constrol files wills will also be backed up with usual backup
 ```
 
 #### Setting location and name of our backup sets
@@ -40,5 +40,19 @@ configure channel device type disk format '/home/oracle/BACKUP/full_%u_%s_%p';
 list backup of database;
 ```
 
+#### Exclude some tablespace from backup
+```sql
+configure exclude for tablespace example;
+```
+
+#### Check obsolede backups
+```sql
+report obsolete;
+```
+
 #### Notes:
 1. We can perform only Whole Database, Full, and Off-line(Cold) Backup; that is the ONLY option in NOARCHIVELOG mode.
+
+
+#### Questions:
+1. what is `filesperset`?
