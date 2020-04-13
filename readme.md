@@ -624,7 +624,7 @@ alter system checkpoint;
 alter system flush buffer_cache;
 ```
 
-#### Restoring backup for a tablespace
+#### Restoring backup for a tablespace (non-essential file missing)
 1. Take tablespace offline and make sure the tablespace is offline
 ```sql
 alter tablespace mine offline immediate;
